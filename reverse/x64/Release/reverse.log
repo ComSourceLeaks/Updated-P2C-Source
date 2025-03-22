@@ -1,0 +1,4 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: The intermediate directory (x64\Release\) contains files shared from another project (VenomVgreen.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  LINK : /LTCG specified but no code generation required; remove /LTCG from the link command line to improve linker performance
+  reverse.vcxproj -> C:\Users\neute\Downloads\PasterX-Fortnite-Source-main\x64\Release\PasterX Pasted.exe
