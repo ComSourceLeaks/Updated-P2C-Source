@@ -1000,7 +1000,7 @@ std::string random_string( std::string::size_type length )
 {
 	static auto & chrs = "0123456789"
 		"abcdefghijklmnopqrstuvwxyz"
-		"ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#%^&*()";
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 	thread_local static std::mt19937 rg { std::random_device{}( ) };
 	thread_local static std::uniform_int_distribution<std::string::size_type> pick( 0, sizeof( chrs ) - 2 );
@@ -1012,7 +1012,7 @@ std::string random_string( std::string::size_type length )
 	while ( length-- )
 		s += chrs[ pick( rg ) ];
 
-	return s + ".exe";
+	return s;
 }
 std::string localpath( )
 {
@@ -1149,14 +1149,14 @@ int main( int argc, const char * argv[ ] )
 	KeyAuthApp.init( );
 	if ( !KeyAuthApp.response.success )
 	{
-		std::cout << skCrypt( "\n Status: " ) << KeyAuthApp.response.message;
+		std::cout << skCrypt( "\n Status -> " ) << KeyAuthApp.response.message;
 		Sleep( 1500 );
 		exit( 1 );
 	}
 
 	std::string key;
 
-	std::cout << skCrypt( "\n Enter License: " );
+	std::cout << skCrypt( "\n Enter License -> " );
 	std::cin >> key;
 	KeyAuthApp.license( key );
 
